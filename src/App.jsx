@@ -1,7 +1,10 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link as RouterLink } from 'react-router-dom';
 import BookingPage from './BookingPage';
+
+// MUI Components
+import { AppBar, Toolbar, Typography, Button, Container, Box } from '@mui/material';
 
 function Home() {
   const [message, setMessage] = useState('');
@@ -14,24 +17,47 @@ function Home() {
   }, []);
 
   return (
-    <header className="App-header">
-      <h1>Red Light Rentals</h1>
-      <p>{message}</p>
-      <p>¡Tu backend de FastAPI está funcionando!</p>
-      <Link to="/book" className="App-link">Hacer una Reserva</Link>
-    </header>
+    <Container maxWidth="md" sx={{ mt: 4 }}>
+      <Box sx={{ my: 4, textAlign: 'center' }}>
+        <Typography variant="h3" component="h1" gutterBottom>
+          Red Light Rentals
+        </Typography>
+        <Typography variant="h5" component="p" gutterBottom>
+          {message}
+        </Typography>
+        <Typography variant="body1" component="p" gutterBottom>
+          ¡Tu backend de FastAPI está funcionando!
+        </Typography>
+        <Button variant="contained" color="primary" component={RouterLink} to="/book" sx={{ mt: 3 }}>
+          Hacer una Reserva
+        </Button>
+      </Box>
+    </Container>
   );
 }
 
 function App() {
   return (
     <Router>
-      <div className="App">
+      <AppBar position="static" sx={{ bgcolor: '#FF0000' }}>
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Red Light Rentals
+          </Typography>
+          <Button color="inherit" component={RouterLink} to="/">
+            Inicio
+          </Button>
+          <Button color="inherit" component={RouterLink} to="/book">
+            Reservar
+          </Button>
+        </Toolbar>
+      </AppBar>
+      <Box sx={{ bgcolor: '#FF0000', minHeight: 'calc(100vh - 64px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/book" element={<BookingPage />} />
         </Routes>
-      </div>
+      </Box>
     </Router>
   );
 }
