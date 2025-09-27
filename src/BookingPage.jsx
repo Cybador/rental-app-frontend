@@ -96,11 +96,11 @@ function BookingPage() {
               label="Equipo"
               onChange={(e) => setSelectedEquipment(e.target.value)}
             >
-              <MenuItem value="">Selecciona un equipo</MenuItem>
+              <option value="">Selecciona un equipo</option>
               {equipment.map(item => (
                 <MenuItem key={item.id} value={item.id}>
                   {item.name} - ${item.price_per_day} MXN/día
-                </MenuItem>
+                </option>
               ))}
             </Select>
           </FormControl>

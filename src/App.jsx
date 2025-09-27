@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, Link as RouterLink } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link as RouterLink } from 'react-router-dom';
 import BookingPage from './BookingPage';
 
 // MUI Components
@@ -53,10 +53,10 @@ function App() {
         </Toolbar>
       </AppBar>
       <Box sx={{ bgcolor: '#FF0000', minHeight: 'calc(100vh - 64px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/book" element={<BookingPage />} />
-        </Routes>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/book" component={BookingPage} />
+        </Switch>
       </Box>
     </Router>
   );
