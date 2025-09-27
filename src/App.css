@@ -54,7 +54,7 @@ body {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of_type(2) .logo {
+  a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
@@ -65,4 +65,69 @@ body {
 
 .read-the-docs {
   color: #888;
+}
+
+/* Estilos para el formulario de reserva */
+.BookingPage {
+  width: 100%;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="date"],
+.form-group select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #333; /* Fondo oscuro para los campos */
+  color: white;
+}
+
+.booking-form button {
+  padding: 10px 15px;
+  background-color: #007bff; /* Azul para el botón */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.booking-form button:hover {
+  background-color: #0056b3;
+}
+
+.message {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #28a745; /* Verde para mensajes de éxito */
+}
+
+.App-link {
+  color: #61dafb; /* Color de enlace React */
+  margin-top: 20px;
 }
