@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Frontend de la Aplicación de Renta</h1>
+        <h1>Red Light Rentals</h1>
         <p>{message}</p>
         <p>¡Tu backend de FastAPI está funcionando!</p>
       </header>
