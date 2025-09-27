@@ -4,7 +4,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #282c34; /* Un gris oscuro */
+  background-color: #FF0000; /* Rojo vibrante */
   color: white; /* Texto blanco para contraste */
 }
 
@@ -21,7 +21,7 @@ body {
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #FF0000; /* Rojo vibrante */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -54,7 +54,7 @@ body {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
+  a:nth-of_type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
